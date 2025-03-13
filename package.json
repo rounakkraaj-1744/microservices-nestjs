@@ -13,9 +13,9 @@
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/apps/ms/main",
     "concurrently": "concurrently \"npm run start:service1\" \"npm run start:service2\" \"npm run start:service3\"",
-    "start:service1":"nest start --watch api-gateway",
-    "start:service2":"nest start --watch ms-a",
-    "start:service3":"nest start --watch ms-b",
+    "start:service1": "nest start --watch api-gateway",
+    "start:service2": "nest start --watch ms-a",
+    "start:service3": "nest start --watch ms-b",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
     "test": "jest",
     "test:watch": "jest --watch",
@@ -72,7 +72,11 @@
     "coverageDirectory": "./coverage",
     "testEnvironment": "node",
     "roots": [
-      "<rootDir>/apps/"
-    ]
+      "<rootDir>/apps/",
+      "<rootDir>/libs/"
+    ],
+    "moduleNameMapper": {
+      "^@app/shared(|/.*)$": "<rootDir>/libs/shared/src/$1"
+    }
   }
 }

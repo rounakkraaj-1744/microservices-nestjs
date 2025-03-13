@@ -1,9 +1,10 @@
 import { Module } from '@nestjs/common';
 import { ApiGatewayController } from './api-gateway.controller';
 import { ApiGatewayService } from './api-gateway.service';
+import { SharedModule } from '@app/shared';
 
 @Module({
-  imports: [],
+  imports: [SharedModule],
   controllers: [ApiGatewayController],
   providers: [ApiGatewayService],
 })
