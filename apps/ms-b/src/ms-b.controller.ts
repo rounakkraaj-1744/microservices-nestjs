@@ -1,12 +1,13 @@
 import { Controller, Get } from '@nestjs/common';
 import { MsBService } from './ms-b.service';
+import { SharedService } from '@app/shared';
 
 @Controller()
 export class MsBController {
-  constructor(private readonly msBService: MsBService) {}
+  constructor(private readonly msBService: MsBService, private readonly SharedService: SharedService) {}
 
   @Get()
-  getHello(): string {
-    return this.msBService.getHello();
+  getHello() {
+    return this.msBService.getInfoFromB();
   }
 }

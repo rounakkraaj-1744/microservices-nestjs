@@ -15,4 +15,9 @@ export class ApiGatewayController {
   getInfoFromA(){
     return this.apiGatewayService.getInfoFromA();
   }
+
+  @Get("/service-b")
+  getInfoFromB(){
+    this.apiGatewayService.getInfoFromB();
+  }
 }
