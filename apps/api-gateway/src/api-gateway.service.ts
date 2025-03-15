@@ -1,8 +1,10 @@
 import { Injectable } from '@nestjs/common';
+import { MsAService } from 'apps/ms-a/src/ms-a.service';
 
 @Injectable()
 export class ApiGatewayService {
-  getHello(): string {
-    return 'Hello World!';
+  constructor (private readonly MSAService: MsAService){}
+  getInfoFromA(){
+    this.MSAService.getInfoFromA();
   }
 }

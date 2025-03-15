@@ -6,7 +6,7 @@ export class MsAController {
   constructor(private readonly msAService: MsAService) {}
 
   @Get()
-  getHello(): string {
-    return this.msAService.getHello();
+  getHello() {
+    return this.msAService.getInfoFromA();
   }
 }

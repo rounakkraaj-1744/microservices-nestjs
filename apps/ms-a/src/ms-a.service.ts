@@ -1,8 +1,15 @@
+import { SharedService } from '@app/shared';
 import { Injectable } from '@nestjs/common';
 
 @Injectable()
 export class MsAService {
-  getHello(): string {
-    return 'Hello World!';
+  constructor (private readonly SharedService: SharedService){}
+
+  getInfoFromA(){
+    const sharedMessage = this.SharedService.getSharedLibInfo();
+    return({
+      "message" : sharedMessage.message,
+      "service-message": "MS-A"
+    });
   }
 }
