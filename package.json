@@ -23,14 +23,15 @@
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./apps/ms/test/jest-e2e.json",
-    "start:pm2":"pm2 start ecosystem.config.js",
+    "start:pm2": "pm2 start ecosystem.config.js",
     "stop:pm2": "pm2 stop ecosystem.config.js",
-    "restart:pm2":"pm2 restart ecosystem.config.js",
-    "delete:pm2" :"pm2 delete ecosystem.config.js"
+    "restart:pm2": "pm2 restart ecosystem.config.js",
+    "delete:pm2": "pm2 delete ecosystem.config.js"
   },
   "dependencies": {
     "@nestjs/common": "^10.0.0",
     "@nestjs/core": "^10.0.0",
+    "@nestjs/microservices": "^10.4.15",
     "@nestjs/platform-express": "^10.0.0",
     "concurrently": "^9.1.2",
     "ms": "file:",
