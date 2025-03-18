@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { SharedService } from '@app/shared';
 import { Injectable } from '@nestjs/common';
 

@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { NestFactory } from '@nestjs/core';
 import { MsBModule } from './ms-b.module';
 import { MicroserviceOptions, Transport } from '@nestjs/microservices';

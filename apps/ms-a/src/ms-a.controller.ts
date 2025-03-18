@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { Controller, Get } from '@nestjs/common';
 import { MsAService } from './ms-a.service';
 
