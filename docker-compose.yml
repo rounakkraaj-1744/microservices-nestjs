@@ -1,0 +1,36 @@
+services:
+  service1:
+    build:
+      context: .
+      dockerfile: apps/api-gateway/Dockerfile
+    ports:
+      - '3000:3000'
+    networks:
+      - it-network
+    # env_file:
+    #   - .env-production
+
+  service2:
+    build:
+      context: .
+      dockerfile: apps/ms-a/Dockerfile
+    ports:
+      - '3001:3001'
+    networks:
+      - it-network
+    depends_on:
+      - service1
+
+  service3:
+    build:
+      context: .
+      dockerfile: apps/ms-b/Dockerfile
+    ports:
+      - '3002:3002'
+    networks:
+      - it-network
+    depends_on:
+      - service1
+networks:
+  it-network:
+    driver: bridge
